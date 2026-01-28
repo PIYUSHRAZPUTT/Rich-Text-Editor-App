@@ -1,28 +1,63 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rich Text Editor App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
-    <div class="container">
-      <div id="content" contenteditable="true" spellcheck="true"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rich Text Editor App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="toolbar">
+      <div class="head">
+        <input type="text" placeholder="FileName" value="undefined" id="FileName" />
+        <select>
+          <option value="" selected hidden>File</option>
+          <option value="">New File</option>
+          <option value="">Save as text</option>
+          <option value="">Save as pdf</option>
+        </select>
+        <select>
+          <option value="" selected hidden>Format</option>
+          <option value="">Heading 1</option>
+          <option value="">Heading 2</option>
+          <option value="">Heading 3</option>
+          <option value="">Heading 4</option>
+          <option value="">Heading 5</option>
+          <option value="">Heading 6</option>
+          <option value="">Paragraph</option>
+        </select>
+        <select>
+          <option value="" selected hidden>Font Size</option>
+          <option value="">Extra Small</option>
+          <option value="">Small</option>
+          <option value="">Medium</option>
+          <option value="">Large</option>
+          <option value="">Extra Large</option>
+          <option value="">Big</option>
+        </select>
+        <div class="color">
+          <span>Color</span>
+          <input type="color" />
+        </div>
+        <div class="color">
+          <span>Background</span>
+          <input type="color" />
+        </div>
+      </div>
     </div>
-  </body>
+    <div id="content" contenteditable="true" spellcheck="true"></div>
+  </div>
+</body>
+
 </html>
