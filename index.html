@@ -27,32 +27,32 @@
           <option value="">Save as text</option>
           <option value="">Save as pdf</option>
         </select>
-        <select>
+        <select onchange="formatDoc('formatBlock',this.value); this.selectedIndex=0;">
           <option value="" selected hidden>Format</option>
-          <option value="">Heading 1</option>
-          <option value="">Heading 2</option>
-          <option value="">Heading 3</option>
-          <option value="">Heading 4</option>
-          <option value="">Heading 5</option>
-          <option value="">Heading 6</option>
-          <option value="">Paragraph</option>
+          <option value="h1">Heading 1</option>
+          <option value="h2">Heading 2</option>
+          <option value="h3">Heading 3</option>
+          <option value="h4">Heading 4</option>
+          <option value="h5">Heading 5</option>
+          <option value="h6">Heading 6</option>
+          <option value="p">Paragraph</option>
         </select>
-        <select>
+        <select onchange="formatDoc('fontSize',this.value); this.selectedIndex=0;">
           <option value="" selected hidden>Font Size</option>
-          <option value="">Extra Small</option>
-          <option value="">Small</option>
-          <option value="">Medium</option>
-          <option value="">Large</option>
-          <option value="">Extra Large</option>
-          <option value="">Big</option>
+          <option value="1">Extra Small</option>
+          <option value="2">Small</option>
+          <option value="3">Medium</option>
+          <option value="4">Large</option>
+          <option value="5">Extra Large</option>
+          <option value="6">Big</option>
         </select>
         <div class="color">
           <span>Color</span>
-          <input type="color" />
+          <input type="color" oninput="formatDoc('foreColor',this.value); this.value='#111111'"/>
         </div>
         <div class="color">
           <span>Background</span>
-          <input type="color" />
+          <input type="color" oninput="formatDoc('hiliteColor',this.value); this.value='#111111'"/>
         </div>
       </div>
       <div class="btn-toolbar">
