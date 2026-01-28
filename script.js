@@ -25,3 +25,38 @@ content.addEventListener("mouseenter", () => {
     });
   });
 });
+
+const fileName = document.getElementById("FileName");
+window.handleFileExport = (value) => {
+  if (value === "new") {
+    content.innerHTML = "";
+    fileName.value = "undefined";
+  }
+  if (value === "pdf") {
+    html2pdf(content).save(fileName.value);
+  }
+  if (value === "txt") {
+    const extractedText = content.innerText;
+    const blob = new Blob([extractedText]);
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = (fileName.value || "file") + ".txt";
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+};
+
+let active = false;
+let showCode = document.getElementById("show-code");
+showCode.addEventListener("click", () => {
+  active = !active;
+  showCode.dataset.active = active;
+  if (active) {
+    content.textContent = content.innerHTML;
+    content.setAttribute("contenteditable", "false");
+  } else {
+    content.innerHTML = content.textContent;
+    content.setAttribute("contenteditable", "true");
+  }
+});
