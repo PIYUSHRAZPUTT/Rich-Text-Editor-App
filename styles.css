@@ -4,7 +4,8 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-body{
+
+body {
     background: #f0f2f5;
     display: flex;
     justify-content: center;
@@ -12,16 +13,90 @@ body{
     min-height: 100vh;
     padding: 20px;
 
-    .container{
+    .container {
         max-width: 1000px;
         width: 100%;
         background: #fff;
-        /* background-color: black; */
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-        #content{
+        .toolbar {
+            padding: 20px;
+            background: #ffffff;
+            border-bottom: 1px solid #eaeaea;
+
+            .head {
+                display: flex;
+                gap: 12px;
+                margin-bottom: 20px;
+                flex-wrap: wrap;
+
+                #FileName {
+                    max-width: 120px;
+                    padding: 8px 12px;
+                    border-radius: 8px;
+                    border: 1px solid #e0e0e0;
+                    outline: none;
+                    font-size: 14px;
+                    transition: border-color 0.2s ease;
+                }
+
+                select {
+                    background: #fff;
+                    border: 1px solid #e0e0e0;
+                    border-radius: 8px;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 8px 12px;
+                    font-size: 14px;
+                    transition: all 0.2s ease;
+                }
+
+                /* Dropdown ke andar ke options */
+                select option {
+                    background: #000;
+                    color: #fff;
+                    border-radius: 8px;
+                }
+
+                select:hover,
+                select:focus {
+                    border-color: #666;
+                }
+
+                .color {
+                    background: #fff;
+                    border: 1px solid #e0e0e0;
+                    border-radius: 8px;
+                    outline: none;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    grid-gap: 8px;
+                    padding: 0 12px;
+                    transition: all 0.2s ease;
+
+                    span {
+                        font-size: 14px;
+                        color: #333;
+                    }
+
+                    input {
+                        border: none;
+                        padding: 0;
+                        width: 20px;
+                        height: 20px;
+                        background: #fff;
+                        cursor: pointer;
+                        border-radius: 4px;
+                    }
+                }
+            }
+        }
+
+
+        #content {
             padding: 24px;
             outline: none;
             max-height: 60vh;
