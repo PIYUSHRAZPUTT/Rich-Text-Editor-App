@@ -21,11 +21,11 @@
     <div class="toolbar">
       <div class="head">
         <input type="text" placeholder="FileName" value="undefined" id="FileName" />
-        <select>
+        <select onchange="handleFileExport(this.value)">
           <option value="" selected hidden>File</option>
-          <option value="">New File</option>
-          <option value="">Save as text</option>
-          <option value="">Save as pdf</option>
+          <option value="new">New File</option>
+          <option value="txt">Save as text</option>
+          <option value="pdf">Save as pdf</option>
         </select>
         <select onchange="formatDoc('formatBlock',this.value); this.selectedIndex=0;">
           <option value="" selected hidden>Format</option>
@@ -48,11 +48,11 @@
         </select>
         <div class="color">
           <span>Color</span>
-          <input type="color" oninput="formatDoc('foreColor',this.value); this.value='#111111'"/>
+          <input type="color" oninput="formatDoc('foreColor',this.value); this.value='#111111'" />
         </div>
         <div class="color">
           <span>Background</span>
-          <input type="color" oninput="formatDoc('hiliteColor',this.value); this.value='#111111'"/>
+          <input type="color" oninput="formatDoc('hiliteColor',this.value); this.value='#111111'" />
         </div>
       </div>
       <div class="btn-toolbar">
@@ -70,11 +70,14 @@
         <button onclick="formatDoc('insertUnorderedList')"><i class="fa-solid fa-list"></i></button>
         <button onclick="handleAddLink()"><i class="fa-solid fa-link"></i></button>
         <button onclick="formatDoc('unlink')"><i class="fa-solid fa-link-slash"></i></button>
-        <button><i class="fa-solid fa-code"></i></button>
+        <button data-active="false" id="show-code"><i class="fa-solid fa-code"></i></button>
       </div>
     </div>
     <div id="content" contenteditable="true" spellcheck="true"></div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="script.js"></script>
 </body>
 
